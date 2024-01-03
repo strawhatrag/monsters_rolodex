@@ -4,7 +4,8 @@ body {
   font-family: 'Roboto', 'Segoe UI', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', 'Droid Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to left, rgb(25, 54, 139), rgb(60, 95, 203) 100%);
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+
   text-align: center;
 }
 
@@ -13,6 +14,6 @@ body {
     margin-top: 75px;
     margin-bottom: 50px;
     font-size: 76px;
-    color: #0ccac4;
+    color: #043938;
     font-family: 'Bigelow Rules';
 }
