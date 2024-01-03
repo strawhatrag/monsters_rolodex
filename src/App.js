@@ -23,8 +23,6 @@ const App = () => {
     });
 
     setFilteredMonsters(newfilteredMonsters);
-
-    console.log("effect");
   }, [monsters, searchField]);
 
   const handleSearchChange = (event) => {
