@@ -7,6 +7,7 @@ const App = () => {
   // each element needs a separate useState
   const [searchField, setSearchField] = useState(""); // [value, setValue]
   const [monsters, setMonsters] = useState([]); // [value, setValue]
+  const [filteredMonsters, setFilteredMonsters] = useState(monsters);
 
   console.log("render");
 
@@ -16,14 +17,21 @@ const App = () => {
       .then((users) => setMonsters(users));
   }, []);
 
+  useEffect(() => {
+    const newfilteredMonsters = monsters.filter((monster) => {
+      return monster.name.toLowerCase().includes(searchField.toLowerCase());
+    });
+
+    setFilteredMonsters(newfilteredMonsters);
+
+    console.log("effect");
+  }, [monsters, searchField]);
+
   const handleSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString);
   };
 
-  const filteredMonsters = monsters.filter((monster) =>
-    monster.name.toLowerCase().includes(searchField.toLowerCase())
-  );
   return (
     <div className="App">
       <h1 className="app-title">Monster Rolodex</h1>
